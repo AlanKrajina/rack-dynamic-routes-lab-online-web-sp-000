@@ -11,6 +11,7 @@ class Application
     if req.path.match(/items/)
     
       resp.write item.price
+      
     elsif Item.all.include? item
     
       resp.status = 400
