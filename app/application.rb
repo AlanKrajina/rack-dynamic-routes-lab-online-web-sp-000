@@ -11,13 +11,11 @@ class Application
     if req.path.match(/items/) 
       
       if Item.all.include? item
-    
-      resp.write item.price
-    
+        resp.write item.price
       else
-      resp.write "Item not found"
-      resp.status = 400
-    end
+        resp.write "Item not found"
+        resp.status = 400
+      end
     
      else
       resp.write "Route not found"
