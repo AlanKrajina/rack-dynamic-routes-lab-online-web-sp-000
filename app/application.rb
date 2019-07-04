@@ -12,7 +12,7 @@ class Application
     
       resp.write item.price
       
-    elsif @@items == nil
+    elsif !@@items.include? item
     
       resp.status = 400
      else
