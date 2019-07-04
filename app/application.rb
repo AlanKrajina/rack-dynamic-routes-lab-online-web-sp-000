@@ -12,7 +12,7 @@ class Application
     
       resp.write item.price
       
-    elsif !Item.all.find{|s| s.name == items_name} 
+    elsif 
     
       resp.status = 400
      else
