@@ -4,11 +4,9 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
  
-      items_name = req.path.split("/items/").last 
-      item = Item.all.find{|s| s.name == items_name} #object iz ITEM clase
- 
     if req.path.match(/items/) 
-      
+      items_name = req.path.split("/items/").last 
+      item = Item.all.find{|s| s.name == items_name}      
       if Item.all.include? item
         resp.write item.price
       else
