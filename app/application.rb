@@ -6,7 +6,7 @@ class Application
     req = Rack::Request.new(env)
  
       items_title = req.path.split("/items/").last 
-      item = @@items.find{|s| s.title == items_title} 
+      item = Item.find{|s| s.title == items_title} 
  
     if req.path.match(/items/)
     
