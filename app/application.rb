@@ -11,7 +11,7 @@ class Application
       item = @@item.find{|s| s.title == items_title}
  
       resp.write item.price
-    elsif @@item == nil
+    elsif @@items == nil
     
       resp.status = 400
      else
