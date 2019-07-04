@@ -5,14 +5,13 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
  
- 
+      items_title = req.path.split("/items/").last 
+      item = @@items.find{|s| s.title == items_title} 
  
     if req.path.match(/items/)
-      
-      items_title = req.path.split("/items/").last 
-      item = @@items.find{|s| s.title == items_title}
- 
+    
       resp.write item.price
+      
     elsif @@items == nil
     
       resp.status = 400
