@@ -6,7 +6,7 @@ class Application
     req = Rack::Request.new(env)
  
       items_name = req.path.split("/items/").last 
-      item = Item.all.find{|s| s.name == items_name} #object iz ITEM objekta
+      item = Item.all.find{|s| s.name == items_name} #object iz ITEM clase
  
     if req.path.match(/items/)
     
