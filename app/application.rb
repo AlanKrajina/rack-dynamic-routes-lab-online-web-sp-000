@@ -11,6 +11,7 @@ class Application
       item = Item.find{|s| s.title == items_title}
  
       resp.write item.price
+    elsif 
     
      else
       resp.write "Route not found"
